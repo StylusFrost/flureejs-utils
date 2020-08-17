@@ -58,7 +58,7 @@
 
 **● publicToAuthID**: *[pubToAuthID]()* =  pubToAuthID
 
-*Defined in account.ts:76*
+*Defined in [account.ts:76](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L76)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **assertIsArray**(input: *`number`[]*): `void`
 
-*Defined in helpers.ts:29*
+*Defined in [helpers.ts:29](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/helpers.ts#L29)*
 
 **Parameters:**
 
@@ -87,7 +87,7 @@ ___
 
 ▸ **assertIsBuffer**(input: *`Buffer`*): `void`
 
-*Defined in helpers.ts:18*
+*Defined in [helpers.ts:18](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/helpers.ts#L18)*
 
 **Parameters:**
 
@@ -104,7 +104,7 @@ ___
 
 ▸ **assertIsHexString**(input: *`string`*): `void`
 
-*Defined in helpers.ts:7*
+*Defined in [helpers.ts:7](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/helpers.ts#L7)*
 
 **Parameters:**
 
@@ -121,7 +121,7 @@ ___
 
 ▸ **assertIsString**(input: *`string`*): `void`
 
-*Defined in helpers.ts:40*
+*Defined in [helpers.ts:40](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/helpers.ts#L40)*
 
 **Parameters:**
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **ecrecover**(msgHash: *`Buffer`*, v: *`number`*, r: *`Buffer`*, s: *`Buffer`*): `Buffer`
 
-*Defined in signature.ts:31*
+*Defined in [signature.ts:31](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L31)*
 
 **Parameters:**
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **ecsign**(msgHash: *`Buffer`*, privateKey: *`Buffer`*): [ECDSASignature](interfaces/ecdsasignature.md)
 
-*Defined in signature.ts:14*
+*Defined in [signature.ts:14](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L14)*
 
 **Parameters:**
 
@@ -177,7 +177,7 @@ ___
 
 ▸ **hexToUnit8Array**(str: *`string`*): `Uint8Array`
 
-*Defined in bytes.ts:10*
+*Defined in [bytes.ts:10](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/bytes.ts#L10)*
 
 **Parameters:**
 
@@ -194,7 +194,7 @@ ___
 
 ▸ **importPublic**(publicKey: *`Buffer`*): `Buffer`
 
-*Defined in account.ts:43*
+*Defined in [account.ts:43](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L43)*
 
 **Parameters:**
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **isValidAuthID**(authID: *`string`*): `boolean`
 
-*Defined in account.ts:99*
+*Defined in [account.ts:99](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L99)*
 
 **Parameters:**
 
@@ -228,7 +228,7 @@ ___
 
 ▸ **isValidPrivate**(privateKey: *`Buffer`*): `boolean`
 
-*Defined in account.ts:17*
+*Defined in [account.ts:17](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L17)*
 
 **Parameters:**
 
@@ -245,7 +245,7 @@ ___
 
 ▸ **isValidPublic**(publicKey: *`Buffer`*, sanitize?: *`boolean`*): `boolean`
 
-*Defined in account.ts:26*
+*Defined in [account.ts:26](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L26)*
 
 **Parameters:**
 
@@ -263,7 +263,7 @@ ___
 
 ▸ **isValidSignature**(v: *`number`*, r: *`Buffer`*, s: *`Buffer`*): `boolean`
 
-*Defined in signature.ts:44*
+*Defined in [signature.ts:44](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L44)*
 
 **Parameters:**
 
@@ -282,7 +282,7 @@ ___
 
 ▸ **keccak**(a: *`Buffer`*, bits?: *`number`*): `Buffer`
 
-*Defined in hash.ts:11*
+*Defined in [hash.ts:11](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L11)*
 
 **Parameters:**
 
@@ -300,7 +300,7 @@ ___
 
 ▸ **keccak256**(a: *`Buffer`*): `Buffer`
 
-*Defined in hash.ts:27*
+*Defined in [hash.ts:27](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L27)*
 
 **Parameters:**
 
@@ -317,7 +317,7 @@ ___
 
 ▸ **keccakFromArray**(a: *`number`[]*, bits?: *`number`*): `Buffer`
 
-*Defined in hash.ts:57*
+*Defined in [hash.ts:57](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L57)*
 
 **Parameters:**
 
@@ -335,7 +335,7 @@ ___
 
 ▸ **keccakFromHexString**(a: *`string`*, bits?: *`number`*): `Buffer`
 
-*Defined in hash.ts:47*
+*Defined in [hash.ts:47](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L47)*
 
 **Parameters:**
 
@@ -353,7 +353,7 @@ ___
 
 ▸ **keccakFromString**(a: *`string`*, bits?: *`number`*): `Buffer`
 
-*Defined in hash.ts:36*
+*Defined in [hash.ts:36](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L36)*
 
 **Parameters:**
 
@@ -371,7 +371,7 @@ ___
 
 ▸ **privateToAuthID**(privateKey: *`Buffer`*): `Buffer`
 
-*Defined in account.ts:92*
+*Defined in [account.ts:92](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L92)*
 
 **Parameters:**
 
@@ -388,7 +388,7 @@ ___
 
 ▸ **privateToPublic**(privateKey: *`Buffer`*): `Buffer`
 
-*Defined in account.ts:82*
+*Defined in [account.ts:82](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L82)*
 
 **Parameters:**
 
@@ -405,7 +405,7 @@ ___
 
 ▸ **pubToAuthID**(pubKey: *`Buffer`*, sanitize?: *`boolean`*): `Buffer`
 
-*Defined in account.ts:57*
+*Defined in [account.ts:57](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/account.ts#L57)*
 
 **Parameters:**
 
@@ -423,7 +423,7 @@ ___
 
 ▸ **ripemd160**(a: *`Buffer`*, padded: *`boolean`*): `Buffer`
 
-*Defined in hash.ts:104*
+*Defined in [hash.ts:104](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L104)*
 
 **Parameters:**
 
@@ -441,7 +441,7 @@ ___
 
 ▸ **ripemd160FromArray**(a: *`number`[]*, padded: *`boolean`*): `Buffer`
 
-*Defined in hash.ts:124*
+*Defined in [hash.ts:124](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L124)*
 
 **Parameters:**
 
@@ -459,7 +459,7 @@ ___
 
 ▸ **ripemd160FromString**(a: *`string`*, padded: *`boolean`*): `Buffer`
 
-*Defined in hash.ts:114*
+*Defined in [hash.ts:114](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L114)*
 
 **Parameters:**
 
@@ -477,7 +477,7 @@ ___
 
 ▸ **setLengthLeft**(msg: *`Buffer`*, length: *`number`*): `Buffer`
 
-*Defined in bytes.ts:29*
+*Defined in [bytes.ts:29](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/bytes.ts#L29)*
 
 **Parameters:**
 
@@ -496,7 +496,7 @@ ___
 
 ▸ **setLengthRight**(msg: *`Buffer`*, length: *`number`*): `Buffer`
 
-*Defined in bytes.ts:41*
+*Defined in [bytes.ts:41](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/bytes.ts#L41)*
 
 **Parameters:**
 
@@ -515,7 +515,7 @@ ___
 
 ▸ **sha256**(a: *`Buffer`*): `Buffer`
 
-*Defined in hash.ts:66*
+*Defined in [hash.ts:66](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L66)*
 
 **Parameters:**
 
@@ -532,7 +532,7 @@ ___
 
 ▸ **sha256FromArray**(a: *`number`[]*): `Buffer`
 
-*Defined in hash.ts:84*
+*Defined in [hash.ts:84](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L84)*
 
 **Parameters:**
 
@@ -549,7 +549,7 @@ ___
 
 ▸ **sha256FromString**(a: *`string`*): `Buffer`
 
-*Defined in hash.ts:75*
+*Defined in [hash.ts:75](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/hash.ts#L75)*
 
 **Parameters:**
 
@@ -566,7 +566,7 @@ ___
 
 ▸ **toBuffer**(v: *`any`*): `Buffer`
 
-*Defined in bytes.ts:75*
+*Defined in [bytes.ts:75](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/bytes.ts#L75)*
 
 **Parameters:**
 
@@ -583,7 +583,7 @@ ___
 
 ▸ **zeros**(bytes: *`number`*): `Buffer`
 
-*Defined in bytes.ts:18*
+*Defined in [bytes.ts:18](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/bytes.ts#L18)*
 
 **Parameters:**
 
