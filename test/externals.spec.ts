@@ -2,6 +2,8 @@ import * as assert from 'assert'
 
 import * as BN_export from 'bn.js'
 
+const BS58check_export = require('bs58check')
+
 import * as src from '../src'
 
 describe('External BN export', () => {
@@ -33,4 +35,33 @@ describe('External BN export', () => {
   assert.throws(function() {
     new src.BN(0).iaddn(0x4000000)
   }, /^Error: Assertion failed$/)
+})
+
+describe('External BS58check export', () => {
+  it('should export `BS58check`', () => {
+    assert.equal(src.BS58check, BS58check_export)
+  })
+
+  it('should use a BS58check decode function correctly', () => {
+    const actual = src.BS58check.decode('1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i').toString('hex')
+    assert.equal(actual, '0065a16059864a2fdbc7c99a4723a8395bc6f188eb')
+  })
+
+  it('should use a BS58check encode function correctly', () => {
+    const actual = src.BS58check.encode(
+      Buffer.from('0065a16059864a2fdbc7c99a4723a8395bc6f188eb', 'hex'),
+    )
+    assert.equal(actual, '1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i')
+  })
+
+  it('should throw on exceptions', () => {
+    assert.throws(() => {
+      src.BS58check.decode('1AGNa15ZQXAIUgFiqJ2i7Z2DPU2J6hW62i').toString('hex')
+    }, /^Error: Non-base58 character$/)
+  })
+  it('should throw on exceptions ', () => {
+    assert.throws(() => {
+      src.BS58check.decode('Z9inZq4e2HGQRZQezDjFMmqgUE8NwMRok').toString('hex')
+    }, /^Error: Invalid checksum$/)
+  })
 })
