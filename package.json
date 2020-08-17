@@ -1,0 +1,78 @@
+{
+  "name": "flureejs-utils",
+  "version": "0.1.0",
+  "description": "Utilities for handling Fluree keys",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "ethereumjs-config-build",
+    "prepublishOnly": "npm run format && npm run tslint && npm run test",
+    "docs:build": "typedoc --out docs --mode file --readme none --theme markdown --mdEngine github --excludeNotExported src",
+    "coverage": "ethereumjs-config-coverage",
+    "format": "ethereumjs-config-format",
+    "format:fix": "ethereumjs-config-format-fix",
+    "lint": "ethereumjs-config-lint",
+    "lint:fix": "ethereumjs-config-lint-fix",
+    "test:browser": "karma start  karma.conf.js",
+    "tsc": "ethereumjs-config-tsc",
+    "test": "npm run build && nyc --reporter=lcov mocha --require ts-node/register --require source-map-support/register ./test/**/*.ts",
+    "tslint": "ethereumjs-config-tslint",
+    "tslint:fix": "ethereumjs-config-tslint-fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StylusFrost/flureejs-utils.git"
+  },
+  "keywords": [
+    "fluree",
+    "utilties"
+  ],
+  "author": "Pedro Miguel Díaz Peña <pm.diaz.pena@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StylusFrost/flureejs-utils/issues"
+  },
+  "homepage": "https://github.com/StylusFrost/flureejs-utils",
+  "dependencies": {
+    "@types/bn.js": "^4.11.3",
+    "bn.js": "^5.1.2",
+    "secp256k1": "^4.0.1",
+    "keccak256": "^1.0.0",
+    "bs58check": "^2.1.2",
+    "is-hex-prefixed": "^1.0.0",
+    "create-hash":"^1.2.0",
+    "strip-hex-prefix": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ethereumjs/config-nyc": "^1.1.1",
+    "@ethereumjs/config-prettier": "^1.1.1",
+    "@ethereumjs/config-tsc": "^1.1.1",
+    "@ethereumjs/config-tslint": "^1.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.10",
+    "husky": "^2.1.0",
+    "karma": "^5.0.2",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^2.0.0",
+    "karma-typescript": "^5.0.2",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "source-map-support": "^0.5.12",
+    "typedoc-plugin-markdown": "^1.2.0",
+    "ts-node": "^8.9.1",
+    "prettier": "^1.15.3",
+    "tslint": "^5.12.0",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.8.3",
+    "typestrict": "^1.0.2"
+  }
+}
