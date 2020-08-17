@@ -1,6 +1,6 @@
 import * as assert from 'assert'
 import * as BN from 'bn.js'
-import { zeros, setLengthLeft, setLengthRight, toBuffer } from '../src'
+import { zeros, setLengthLeft, setLengthRight, toBuffer,bufferToHex } from '../src'
 
 describe('zeros function', function() {
   it('should produce lots of 0s', function() {
@@ -43,6 +43,19 @@ describe('setLengthRight', function() {
     assert.throws(function() {
       setLengthRight((<unknown>[9, 9]) as Buffer, 3)
     })
+  })
+})
+
+describe('bufferToHex', function() {
+  it('should convert a buffer to hex', function() {
+    const buf = Buffer.from('5b9ac8', 'hex')
+    const hex = bufferToHex(buf)
+    assert.equal(hex, '0x5b9ac8')
+  })
+  it('empty buffer', function() {
+    const buf = Buffer.alloc(0)
+    const hex = bufferToHex(buf)
+    assert.strictEqual(hex, '0x')
   })
 })
 

@@ -99,6 +99,15 @@ export const toBuffer = function(v: any): Buffer {
 }
 
 /**
+ * Converts a `Buffer` into a `0x`-prefixed hex `String`.
+ * @param buf `Buffer` object to convert
+ */
+export const bufferToHex = function(buf: Buffer): string {
+  buf = toBuffer(buf)
+  return '0x' + buf.toString('hex')
+}
+
+/**
  * Converts an `Number` to a `Buffer`
  * @param {Number} i
  * @return {Buffer}
