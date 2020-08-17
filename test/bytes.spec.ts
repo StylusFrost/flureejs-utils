@@ -1,6 +1,6 @@
 import * as assert from 'assert'
 import * as BN from 'bn.js'
-import { zeros, setLengthLeft, setLengthRight, toBuffer,bufferToHex } from '../src'
+import { zeros, setLengthLeft, setLengthRight, toBuffer, bufferToHex } from '../src'
 
 describe('zeros function', function() {
   it('should produce lots of 0s', function() {
