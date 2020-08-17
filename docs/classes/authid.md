@@ -10,17 +10,17 @@
 
 ### Constructors
 
-* [constructor](authid.md#constructor)
+- [constructor](authid.md#constructor)
 
 ### Properties
 
-* [buf](authid.md#buf)
+- [buf](authid.md#buf)
 
 ### Methods
 
-* [toString](authid.md#tostring)
-* [fromPrivateKey](authid.md#fromprivatekey)
-* [fromPublicKey](authid.md#frompublickey)
+- [toString](authid.md#tostring)
+- [fromPrivateKey](authid.md#fromprivatekey)
+- [fromPublicKey](authid.md#frompublickey)
 
 ---
 
@@ -28,79 +28,80 @@
 
 <a id="constructor"></a>
 
-###  constructor
+### constructor
 
-⊕ **new AuthID**(buf: *`Buffer`*): [AuthID](authid.md)
+⊕ **new AuthID**(buf: _`Buffer`_): [AuthID](authid.md)
 
-*Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L6)*
+_Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L6)_
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| buf | `Buffer` |
+| Name | Type     |
+| ---- | -------- |
+| buf  | `Buffer` |
 
 **Returns:** [AuthID](authid.md)
 
-___
+---
 
 ## Properties
 
 <a id="buf"></a>
 
-###  buf
+### buf
 
-**● buf**: *`Buffer`*
+**● buf**: _`Buffer`_
 
-*Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L6)*
+_Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L6)_
 
-___
+---
 
 ## Methods
 
 <a id="tostring"></a>
 
-###  toString
+### toString
 
 ▸ **toString**(): `string`
 
-*Defined in [authid.ts:35](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L35)*
+_Defined in [authid.ts:35](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L35)_
 
 **Returns:** `string`
 
-___
+---
+
 <a id="fromprivatekey"></a>
 
 ### `<Static>` fromPrivateKey
 
-▸ **fromPrivateKey**(privateKey: *`Buffer`*): [AuthID](authid.md)
+▸ **fromPrivateKey**(privateKey: _`Buffer`_): [AuthID](authid.md)
 
-*Defined in [authid.ts:26](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L26)*
+_Defined in [authid.ts:26](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L26)_
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| privateKey | `Buffer` |  A private key must be 256 bits wide |
+| Name       | Type     | Description                         |
+| ---------- | -------- | ----------------------------------- |
+| privateKey | `Buffer` | A private key must be 256 bits wide |
 
 **Returns:** [AuthID](authid.md)
 
-___
+---
+
 <a id="frompublickey"></a>
 
 ### `<Static>` fromPublicKey
 
-▸ **fromPublicKey**(pubKey: *`Buffer`*): [AuthID](authid.md)
+▸ **fromPublicKey**(pubKey: _`Buffer`_): [AuthID](authid.md)
 
-*Defined in [authid.ts:16](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L16)*
+_Defined in [authid.ts:16](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/authid.ts#L16)_
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| pubKey | `Buffer` |  The two points of an uncompressed key |
+| Name   | Type     | Description                           |
+| ------ | -------- | ------------------------------------- |
+| pubKey | `Buffer` | The two points of an uncompressed key |
 
 **Returns:** [AuthID](authid.md)
 
-___
-
+---

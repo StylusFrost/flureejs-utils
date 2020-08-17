@@ -10,9 +10,9 @@
 
 ### Properties
 
-* [r](ecdsasignature.md#r)
-* [s](ecdsasignature.md#s)
-* [v](ecdsasignature.md#v)
+- [r](ecdsasignature.md#r)
+- [s](ecdsasignature.md#s)
+- [v](ecdsasignature.md#v)
 
 ---
 
@@ -20,29 +20,30 @@
 
 <a id="r"></a>
 
-###  r
+### r
 
-**● r**: *`Buffer`*
+**● r**: _`Buffer`_
 
-*Defined in [signature.ts:7](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L7)*
+_Defined in [signature.ts:7](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L7)_
 
-___
+---
+
 <a id="s"></a>
 
-###  s
+### s
 
-**● s**: *`Buffer`*
+**● s**: _`Buffer`_
 
-*Defined in [signature.ts:8](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L8)*
+_Defined in [signature.ts:8](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L8)_
 
-___
+---
+
 <a id="v"></a>
 
-###  v
+### v
 
-**● v**: *`number`*
+**● v**: _`number`_
 
-*Defined in [signature.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L6)*
+_Defined in [signature.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/843f69d/src/signature.ts#L6)_
 
-___
-
+---
