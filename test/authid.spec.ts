@@ -22,8 +22,8 @@ describe('AuthID', () => {
 
   it('should instantiate from private key', () => {
     // prettier-ignore
-    const privateKey = Buffer.from([234, 84, 189, 197, 45, 22, 63, 136, 201, 58, 176, 97, 87, 130, 207, 113, 138, 46, 251, 158, 81, 167, 152, 154, 171, 27, 8, 6, 126, 156, 28, 95])
-    const str = 'Tf3pTk9ECfWsXybjsdqjbYKYYpj9Vq3DTWs'
+    const privateKey = Buffer.from('fe0af041abb1c734f8ab18d5c35385ef1f1c54a7d91fd2a5f9fdd03fcf077600','hex')
+    const str = 'Tf8ovHdgnDZXrMzqELpa1xs1cfdhJie3Pwa'
     const addr = AuthID.fromPrivateKey(privateKey)
     assert.equal(addr.toString(), str)
   })

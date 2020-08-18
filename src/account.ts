@@ -58,6 +58,7 @@ export const pubToAuthID = function(pubKey: Buffer, sanitize: boolean = false): 
     pubKey = Buffer.from(publicKeyConvert(pubKey, false).slice(1))
   }
   assert(pubKey.length === 64)
+
   return Buffer.from(crypto.account_id_from_public(pubKey.toString('hex')).toString())
 }
 
@@ -78,7 +79,7 @@ export const privateToPublic = function(privateKey: Buffer): Buffer {
  * @param privateKey A private key must be 256 bits wide
  */
 export const privateToAuthID = function(privateKey: Buffer): Buffer {
-  return publicToAuthID(privateToPublic(privateKey))
+  return Buffer.from(crypto.account_id_from_private(privateKey.toString('hex')))
 }
 
 /**

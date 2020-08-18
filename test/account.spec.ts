@@ -316,14 +316,14 @@ describe('privateToPublic', function() {
 
 describe('privateToAuthID', function() {
   it('should produce an authID given a private key', function() {
-    const authID = 'Texkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi'
+    const authID = 'Tf8ovHdgnDZXrMzqELpa1xs1cfdhJie3Pwa'
     // Our private key
     const privateKey = Buffer.from(
-      'efca4cdd31923b50f4214af5d2ae10e7ac45a5019e9431cc195482d707485378',
+      'fe0af041abb1c734f8ab18d5c35385ef1f1c54a7d91fd2a5f9fdd03fcf077600',
       'hex',
     )
-    const r: any = privateToAuthID(privateKey).toString('hex')
-    assert.equal(r.toString('hex'), Buffer.from(authID).toString('hex'))
+    const r: Buffer = privateToAuthID(privateKey)
+    assert.equal(r.toString(), authID)
   })
 })
 describe('.isValidAuthID()', function() {
