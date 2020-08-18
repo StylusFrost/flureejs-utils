@@ -27,3 +27,8 @@ export * from './signature'
  * External exports (BN)
  */
 export * from './externals'
+
+/**
+ * Function for definining properties on an object
+ */
+export * from './object'
