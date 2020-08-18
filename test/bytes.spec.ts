@@ -1,6 +1,15 @@
 import * as assert from 'assert'
 import * as BN from 'bn.js'
-import { zeros, setLengthLeft, setLengthRight, toBuffer, bufferToHex } from '../src'
+import {
+  zeros,
+  setLengthLeft,
+  setLengthRight,
+  toBuffer,
+  bufferToHex,
+  baToJSON,
+  unpadBuffer,
+  bufferToInt,
+} from '../src'
 
 describe('zeros function', function() {
   it('should produce lots of 0s', function() {
@@ -91,5 +100,40 @@ describe('toBuffer', function() {
     assert.throws(function() {
       toBuffer({ test: 1 })
     })
+  })
+})
+
+describe('baToJSON', function() {
+  it('should turn a array of buffers into a pure json object', function() {
+    const ba = [Buffer.from([0]), Buffer.from([1]), [Buffer.from([2])]]
+    assert.deepEqual(baToJSON(ba), ['0x00', '0x01', ['0x02']])
+  })
+  it('should turn a buffers into string', function() {
+    assert.deepEqual(baToJSON(Buffer.from([0])), '0x00')
+  })
+})
+
+describe('unpadBuffer', function() {
+  it('should unpad a Buffer', function() {
+    const buf = toBuffer('0x0000000006600')
+    const r = unpadBuffer(buf)
+    assert.deepEqual(r, toBuffer('0x6600'))
+  })
+  it('should throw if input is not a Buffer', function() {
+    assert.throws(function() {
+      unpadBuffer((<unknown>'0000000006600') as Buffer)
+    })
+  })
+})
+
+describe('bufferToInt', function() {
+  it('should convert a int to hex', function() {
+    const buf = Buffer.from('5b9ac8', 'hex')
+    const i = bufferToInt(buf)
+    assert.equal(i, 6003400)
+    assert.equal(bufferToInt(Buffer.allocUnsafe(0)), 0)
+  })
+  it('should convert empty input to 0', function() {
+    assert.equal(bufferToInt(Buffer.allocUnsafe(0)), 0)
   })
 })

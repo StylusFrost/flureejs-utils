@@ -148,3 +148,53 @@ function padToEven(value: string) {
 
   return a
 }
+
+/**
+ * Converts a `Buffer` or `Array` to JSON.
+ * @param ba (Buffer|Array)
+ * @return (Array|String|null)
+ */
+export const baToJSON = function(ba: any): any {
+  if (Buffer.isBuffer(ba)) {
+    return `0x${ba.toString('hex')}`
+  } else if (ba instanceof Array) {
+    const array = []
+    for (let i = 0; i < ba.length; i++) {
+      array.push(baToJSON(ba[i]))
+    }
+    return array
+  }
+}
+
+/**
+ * Trims leading zeros from a `Buffer`.
+ * @param a (Buffer)
+ * @return (Buffer)
+ */
+export const unpadBuffer = function(a: Buffer): Buffer {
+  assertIsBuffer(a)
+  return stripZeros(a) as Buffer
+}
+
+/**
+ * Trims leading zeros from a `Buffer`, `String` or `Number[]`.
+ * @param a (Buffer|Array|String)
+ * @return (Buffer|Array|String)
+ */
+const stripZeros = function(a: any): Buffer | number[] | string {
+  let first = a[0]
+  while (a.length > 0 && first.toString() === '0') {
+    a = a.slice(1)
+    first = a[0]
+  }
+  return a
+}
+
+/**
+ * Converts a `Buffer` to a `Number`.
+ * @param buf `Buffer` object to convert
+ * @throws If the input number exceeds 53 bits.
+ */
+export const bufferToInt = function(buf: Buffer): number {
+  return new BN(toBuffer(buf)).toNumber()
+}
