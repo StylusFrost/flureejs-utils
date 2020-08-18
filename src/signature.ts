@@ -1,6 +1,9 @@
-const { ecdsaSign, ecdsaRecover, publicKeyConvert } = require('secp256k1')
+const { signatureImport } = require('secp256k1')
 import * as BN from 'bn.js'
-import { setLengthLeft } from './bytes'
+import { hexToUnit8Array } from './bytes'
+import { importPublic } from './account'
+
+const crypto = require('@fluree/crypto-base')
 
 export interface ECDSASignature {
   v: number
@@ -11,16 +14,14 @@ export interface ECDSASignature {
 /**
  * Returns the ECDSA signature of a message hash.
  */
-export const ecsign = function(msgHash: Buffer, privateKey: Buffer): ECDSASignature {
-  const sig = ecdsaSign(msgHash, privateKey)
-  const recovery: number = sig.recid
-
+export const ecsign = function(msg: Buffer, privateKey: Buffer): ECDSASignature {
+  const sigDER = crypto.sign_message(msg.toString('hex'), privateKey.toString('hex'))
+  const sig = signatureImport(Buffer.from(sigDER.slice(2), 'hex'))
   const ret = {
-    r: Buffer.from(sig.signature.slice(0, 32)),
-    s: Buffer.from(sig.signature.slice(32, 64)),
-    v: recovery + 27,
+    r: Buffer.from(sig.slice(0, 32)),
+    s: Buffer.from(sig.slice(32, 64)),
+    v: 27,
   }
-
   return ret
 }
 
@@ -28,14 +29,26 @@ export const ecsign = function(msgHash: Buffer, privateKey: Buffer): ECDSASignat
  * ECDSA public key recovery from signature.
  * @returns Recovered public key
  */
-export const ecrecover = function(msgHash: Buffer, v: number, r: Buffer, s: Buffer): Buffer {
-  const signature = Buffer.concat([setLengthLeft(r, 32), setLengthLeft(s, 32)], 64)
-  const recovery = calculateSigRecovery(v)
-  if (!isValidSigRecovery(recovery)) {
+export const ecrecover = function(msg: Buffer, v: number, r: Buffer, s: Buffer): Buffer {
+  if (!isValidSigRecovery(v)) {
     throw new Error('Invalid signature v value')
   }
-  const senderPubKey = ecdsaRecover(signature, recovery, msgHash)
-  return Buffer.from(publicKeyConvert(senderPubKey, false).slice(1))
+  const newR = r[0] & 0x80 ? Buffer.concat([hexToUnit8Array('00'), r]) : r
+  const newS = s[0] & 0x80 ? Buffer.concat([hexToUnit8Array('00'), s]) : s
+  const result =
+    '02' +
+    newR.length.toString(16) +
+    newR.toString('hex') +
+    '02' +
+    newS.length.toString(16) +
+    newS.toString('hex')
+  const sigDER =
+    calculateSigRecovery(v).toString(16) +
+    '30' +
+    Buffer.from(result, 'hex').length.toString(16) +
+    result
+  const senderPubKey = crypto.pub_key_from_message(msg.toString('hex'), sigDER)
+  return importPublic(Buffer.from(senderPubKey, 'hex'))
 }
 
 /**
@@ -62,10 +75,10 @@ export const isValidSignature = function(v: number, r: Buffer, s: Buffer): boole
   return true
 }
 
-function isValidSigRecovery(recovery: number): boolean {
-  return recovery === 0 || recovery === 1
+function calculateSigRecovery(v: number): number {
+  return v
 }
 
-function calculateSigRecovery(v: number): number {
-  return v - 27
+function isValidSigRecovery(recovery: number): boolean {
+  return recovery === 27
 }

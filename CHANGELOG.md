@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 (modification: no type change headlines) and this project adheres to
 [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2020-08-18
+
+- Using @fluree/crypto-base for ecdsa ( Need k like a fluree server)
+
+[0.1.2]: https://github.com/StylusFrost/flureejs-utils/compare/v0.1.1...v0.1.2
+
 ## [0.1.1] - 2020-08-17
 
 - Add bufferToHex utility
@@ -16,4 +22,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [0.1.0] - 2020-08-16
 
-- Basic funcionality
+- Basic functionality

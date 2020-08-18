@@ -196,6 +196,14 @@
   resolved "https://registry.yarnpkg.com/@ethereumjs/config-tslint/-/config-tslint-1.1.1.tgz#dc9f15aacaf2f792de96eba75f78fce4360324bb"
   integrity sha512-3Z6M16l20rDRptCOFuKxsn9uypkdNE+5S768ICSbe5KgoyPLjPiHRaSdo76FkFwK5JO6X1Cx5+3tbyDUMBb1jA==
 
+"@fluree/crypto-base@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@fluree/crypto-base/-/crypto-base-0.1.6.tgz#036d112ca14b4a849b09c7a0ff8dcfef677b2559"
+  integrity sha512-IyQ/aFgcFU5bnH89Rn0UZAeK4tdNZ4PQzaOgMrYZaypRkFGKXx/FSJHlht3PcLT04qXPuH+5D7zP4pND3lf5Ug==
+  dependencies:
+    scrypt-js "2.0.4"
+    sha3 "2.0.6"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -272,9 +280,9 @@
   integrity sha512-NYrtPht0wGzhwe9+/idPaBB+TqkY9AhTvOLMkThm0IoEfLaiVQZwBwyJ5puCkO3AUCWrmcoePjp2mbFocKy4SQ==
 
 "@types/node@*":
-  version "14.0.27"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.27.tgz#a151873af5a5e851b51b3b065c9e63390a9e0eb1"
-  integrity sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+  version "14.6.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.0.tgz#7d4411bf5157339337d7cff864d9ff45f177b499"
+  integrity sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
 
 "@types/node@^12.0.10":
   version "12.12.54"
@@ -721,6 +729,14 @@ buffer-xor@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
   integrity sha1-JuYe0UIvtw3ULm42cp7VHYVf6Nk=
+
+buffer@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.2.1.tgz#dd57fa0f109ac59c602479044dca7b8b3d0b71d6"
+  integrity sha512-c+Ko0loDaFfuPWiL02ls9Xd3GO3cPVmUobQ6t3rXNUk304u6hGq+8N/kFi+QEIKhzK3uwolVhLzszmfLmMLnqg==
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 buffer@^5.4.3:
   version "5.6.0"
@@ -1230,9 +1246,9 @@ dom-serialize@^2.2.1:
     void-elements "^2.0.0"
 
 domain-browser@^4.16.0:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-4.16.0.tgz#98820d49e05fec50905071703eff9f21606ee3ec"
-  integrity sha512-oppVWKOBKO04ZGw7xyqUopOl4DeL35Nwosev6WNCaLZCXRPnivliimXj1Jvf4H8ASzX7dyIHjh5YHK18byLg8Q==
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-4.17.0.tgz#a6523549b84483f1868859166f53d08adedc2c1c"
+  integrity sha512-Hj9LbFLqt4MBK/rq24/Bk3nhcPlaKfTCFs8XENVqNQray7WtKbo/GYMGDAVW62O83lgRjxvD5UCmtQsN9B/YxA==
 
 domexception@^1.0.1:
   version "1.0.1"
@@ -3243,6 +3259,11 @@ sax@^1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
+scrypt-js@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/scrypt-js/-/scrypt-js-2.0.4.tgz#32f8c5149f0797672e551c07e230f834b6af5f16"
+  integrity sha512-4KsaGcPnuhtCZQCxFxN3GVYIhKFPTdLd8PLC552XwbMndtD0cjRFAhDuuydXQ0h08ZfPgzqe6EKHozpuH74iDw==
+
 secp256k1@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/secp256k1/-/secp256k1-4.0.2.tgz#15dd57d0f0b9fdb54ac1fa1694f40e5e9a54f4a1"
@@ -3289,6 +3310,13 @@ sha.js@^2.4.0, sha.js@^2.4.8:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+sha3@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/sha3/-/sha3-2.0.6.tgz#bba49db667d151b76fb17b98757cd9a659fc53eb"
+  integrity sha512-bXF1+bl5Lw7EdxDJx/bJsDMnREPmKySMJdOa5j1xv66+prKuTnflAE5wrGXZ9UfdfvjBaVEA0LcAkKJHKXTF/A==
+  dependencies:
+    buffer "5.2.1"
 
 shebang-command@^1.2.0:
   version "1.2.0"

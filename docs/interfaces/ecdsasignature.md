@@ -24,7 +24,7 @@
 
 **● r**: _`Buffer`_
 
-_Defined in [signature.ts:7](https://github.com/StylusFrost/flureejs-utils/blob/4d2641f/src/signature.ts#L7)_
+_Defined in [signature.ts:10](https://github.com/StylusFrost/flureejs-utils/blob/d746799/src/signature.ts#L10)_
 
 ---
 
@@ -34,7 +34,7 @@ _Defined in [signature.ts:7](https://github.com/StylusFrost/flureejs-utils/blob/
 
 **● s**: _`Buffer`_
 
-_Defined in [signature.ts:8](https://github.com/StylusFrost/flureejs-utils/blob/4d2641f/src/signature.ts#L8)_
+_Defined in [signature.ts:11](https://github.com/StylusFrost/flureejs-utils/blob/d746799/src/signature.ts#L11)_
 
 ---
 
@@ -44,6 +44,6 @@ _Defined in [signature.ts:8](https://github.com/StylusFrost/flureejs-utils/blob/
 
 **● v**: _`number`_
 
-_Defined in [signature.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/4d2641f/src/signature.ts#L6)_
+_Defined in [signature.ts:9](https://github.com/StylusFrost/flureejs-utils/blob/d746799/src/signature.ts#L9)_
 
 ---

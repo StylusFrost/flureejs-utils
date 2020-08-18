@@ -1,9 +1,7 @@
 import * as assert from 'assert'
 import { assertIsBuffer } from './helpers'
-import { hexToUnit8Array } from './bytes'
-import { sha256, ripemd160 } from './hash'
 
-const bs58check = require('bs58check')
+const crypto = require('@fluree/crypto-base')
 const {
   privateKeyVerify,
   publicKeyVerify,
@@ -60,17 +58,7 @@ export const pubToAuthID = function(pubKey: Buffer, sanitize: boolean = false): 
     pubKey = Buffer.from(publicKeyConvert(pubKey, false).slice(1))
   }
   assert(pubKey.length === 64)
-
-  // hash sha2-256
-  const hashSHA = sha256(pubKey)
-
-  // hash ripemd160
-  const hashRIPE = ripemd160(hashSHA, false)
-
-  const pubPrefixed = '0f' + '02' + hashRIPE.toString('hex')
-
-  const account_id = bs58check.encode(hexToUnit8Array(pubPrefixed))
-  return Buffer.from(account_id)
+  return Buffer.from(crypto.account_id_from_public(pubKey.toString('hex')).toString())
 }
 
 export const publicToAuthID = pubToAuthID
