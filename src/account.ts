@@ -59,7 +59,10 @@ export const pubToAuthID = function(pubKey: Buffer, sanitize: boolean = false): 
   }
   assert(pubKey.length === 64)
 
-  return Buffer.from(crypto.account_id_from_public(pubKey.toString('hex')).toString())
+  // Ussing short pubkey value
+  return Buffer.from(
+    crypto.account_id_from_public('02' + pubKey.slice(0, 32).toString('hex')).toString(),
+  )
 }
 
 export const publicToAuthID = pubToAuthID

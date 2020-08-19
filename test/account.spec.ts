@@ -142,19 +142,19 @@ describe('importPublic', function() {
 describe('publicToAuthID', function() {
   it('should produce an authID given a public key', function() {
     const pubKey = Buffer.from(
-      '5d4392f450262b276652c1fc037606abac500f3160830ce9df53aa70d95ce7cfb8b06010b2f3691c78c65c21eb4cf3dfdbfc0745d89b664ee10435bb3a0f906c',
+      '991719b37817f6108fc8b0e824d3a9daa3d39bc97ecfd4f8bc7ef3b71d4c6391b6b27153667e924fceaf9993f5ed9779e794c2826d06e52771c63138287bb542',
       'hex',
     )
-    const authID = 'Texkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi'
+    const authID = 'TfGvAdKH2nRdV4zP4yBz4kJ2R9WzYHDe2EV'
     const r = publicToAuthID(pubKey)
     assert.equal(r.toString('hex'), Buffer.from(authID).toString('hex'))
   })
   it('should produce an authID given a SEC1 public key', function() {
     const pubKey = Buffer.from(
-      '045d4392f450262b276652c1fc037606abac500f3160830ce9df53aa70d95ce7cfb8b06010b2f3691c78c65c21eb4cf3dfdbfc0745d89b664ee10435bb3a0f906c',
+      '04991719b37817f6108fc8b0e824d3a9daa3d39bc97ecfd4f8bc7ef3b71d4c6391b6b27153667e924fceaf9993f5ed9779e794c2826d06e52771c63138287bb542',
       'hex',
     )
-    const authID = 'Texkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi'
+    const authID = 'TfGvAdKH2nRdV4zP4yBz4kJ2R9WzYHDe2EV'
     const r = publicToAuthID(pubKey, true)
     assert.equal(r.toString('hex'), Buffer.from(authID).toString('hex'))
   })

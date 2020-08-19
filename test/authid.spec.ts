@@ -7,7 +7,7 @@ describe('AuthID', () => {
       '3a443d8381a6798a70c6ff9304bdc8cb0163c23211d11628fae52ef9e0dca11a001cf066d56a8156fc201cd5df8a36ef694eecd258903fca7086c1fae7441e1d',
       'hex',
     )
-    const str = 'Tf3pTk9ECfWsXybjsdqjbYKYYpj9Vq3DTWs'
+    const str = 'Tezqxp8Cuyx8aPzwZhj7rs5EjqKYYowxRss'
     const authID = AuthID.fromPublicKey(pubKey)
     assert.equal(authID.toString(), str)
   })
