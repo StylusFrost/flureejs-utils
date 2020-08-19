@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 (modification: no type change headlines) and this project adheres to
 [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2020-08-19
+
+### Changed
+
+- Documentation and test improvements
+
+### Fixed
+
+- Fix Using compress Public key into publicToAuthID
+
+[0.1.5]: https://github.com/StylusFrost/flureejs-utils/compare/v0.1.4...v0.1.5
+
 ## [0.1.4] - 2020-08-19
 
 - Using @fluree/crypto-base for publicToAuthID too
