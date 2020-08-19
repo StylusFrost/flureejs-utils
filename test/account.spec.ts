@@ -142,19 +142,19 @@ describe('importPublic', function() {
 describe('publicToAuthID', function() {
   it('should produce an authID given a public key', function() {
     const pubKey = Buffer.from(
-      '991719b37817f6108fc8b0e824d3a9daa3d39bc97ecfd4f8bc7ef3b71d4c6391b6b27153667e924fceaf9993f5ed9779e794c2826d06e52771c63138287bb542',
+      '8a271161197e408c9b64a684fcbd6c2b05c08dfcb2a8d3ef444671a128511b6379eba36c622cab9254f5221874a6d8629c83dc4f4720d31e763ab8e109dcbe2b',
       'hex',
     )
-    const authID = 'TfGvAdKH2nRdV4zP4yBz4kJ2R9WzYHDe2EV'
+    const authID = 'Tf8ovHdgnDZXrMzqELpa1xs1cfdhJie3Pwa'
     const r = publicToAuthID(pubKey)
     assert.equal(r.toString('hex'), Buffer.from(authID).toString('hex'))
   })
   it('should produce an authID given a SEC1 public key', function() {
     const pubKey = Buffer.from(
-      '04991719b37817f6108fc8b0e824d3a9daa3d39bc97ecfd4f8bc7ef3b71d4c6391b6b27153667e924fceaf9993f5ed9779e794c2826d06e52771c63138287bb542',
+      '048a271161197e408c9b64a684fcbd6c2b05c08dfcb2a8d3ef444671a128511b6379eba36c622cab9254f5221874a6d8629c83dc4f4720d31e763ab8e109dcbe2b',
       'hex',
     )
-    const authID = 'TfGvAdKH2nRdV4zP4yBz4kJ2R9WzYHDe2EV'
+    const authID = 'Tf8ovHdgnDZXrMzqELpa1xs1cfdhJie3Pwa'
     const r = publicToAuthID(pubKey, true)
     assert.equal(r.toString('hex'), Buffer.from(authID).toString('hex'))
   })
@@ -316,14 +316,14 @@ describe('privateToPublic', function() {
 
 describe('privateToAuthID', function() {
   it('should produce an authID given a private key', function() {
-    const authID = 'Tf8ovHdgnDZXrMzqELpa1xs1cfdhJie3Pwa'
+    const authID = 'TfGvAdKH2nRdV4zP4yBz4kJ2R9WzYHDe2EV'
     // Our private key
     const privateKey = Buffer.from(
-      'fe0af041abb1c734f8ab18d5c35385ef1f1c54a7d91fd2a5f9fdd03fcf077600',
+      '6a5f415f49986006815ae7887016275aac8ffb239f9a2fa7172300578582b6c2',
       'hex',
     )
-    const r: Buffer = privateToAuthID(privateKey)
-    assert.equal(r.toString(), authID)
+    const r: any = privateToAuthID(privateKey).toString('hex')
+    assert.equal(r.toString('hex'), Buffer.from(authID).toString('hex'))
   })
 })
 describe('.isValidAuthID()', function() {
