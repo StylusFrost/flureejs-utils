@@ -1,5 +1,6 @@
 import * as assert from 'assert'
 import { assertIsBuffer } from './helpers'
+import * as BN from 'bn.js'
 
 const crypto = require('@fluree/crypto-base')
 const {
@@ -59,10 +60,12 @@ export const pubToAuthID = function(pubKey: Buffer, sanitize: boolean = false): 
   }
   assert(pubKey.length === 64)
 
-  // Ussing short pubkey value
-  return Buffer.from(
-    crypto.account_id_from_public('02' + pubKey.slice(0, 32).toString('hex')).toString(),
-  )
+  // Ussing compress pubkey value
+  const compress = new BN(pubKey, 'hex').isEven()
+    ? '02' + pubKey.slice(0, 32).toString('hex')
+    : '03' + pubKey.slice(0, 32).toString('hex')
+
+  return Buffer.from(crypto.account_id_from_public(compress))
 }
 
 export const publicToAuthID = pubToAuthID
