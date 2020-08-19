@@ -86,10 +86,6 @@ export const defineProperties = function(self: any, fields: any, data?: any) {
       data = Buffer.from(stripHexPrefix(data), 'hex')
     }
 
-    /*if (Buffer.isBuffer(data)) {
-        data = rlp.decode(data)
-      }*/
-
     if (Array.isArray(data)) {
       if (data.length > self._fields.length) {
         throw new Error('wrong number of fields in data')
