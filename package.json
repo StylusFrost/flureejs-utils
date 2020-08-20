@@ -1,6 +1,6 @@
 {
   "name": "flureejs-utils",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Utilities for handling Fluree keys",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
@@ -33,7 +33,7 @@
   },
   "keywords": [
     "fluree",
-    "utilties"
+    "utilities"
   ],
   "author": "Pedro Miguel Díaz Peña <pm.diaz.pena@gmail.com>",
   "license": "MIT",

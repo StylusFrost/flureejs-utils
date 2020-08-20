@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 (modification: no type change headlines) and this project adheres to
 [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.6] - 2020-08-20
+
+### Changed
+
+- isValidAuthID now accepts authID parameter as a Buffer
+- Documentation and test improvements
+
+[0.1.6]: https://github.com/StylusFrost/flureejs-utils/compare/v0.1.5...v0.1.6
+
 ## [0.1.5] - 2020-08-19
 
 ### Changed
