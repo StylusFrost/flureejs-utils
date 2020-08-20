@@ -328,15 +328,15 @@ describe('privateToAuthID', function() {
 })
 describe('.isValidAuthID()', function() {
   it('should return true', function() {
-    assert.equal(isValidAuthID('Texkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi'), true)
-    assert.equal(isValidAuthID('TfGtWFR262hoct1mC5ZEkTXQmANHnJupKWw'), true)
+    assert.equal(isValidAuthID(Buffer.from('Texkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi')), true)
+    assert.equal(isValidAuthID(Buffer.from('TfGtWFR262hoct1mC5ZEkTXQmANHnJupKWw')), true)
   })
   it('should return false', function() {
-    assert.equal(isValidAuthID('TfGtWFR262hoct1mC5ZEkTXQmANHnJup'), false)
-    assert.equal(isValidAuthID('TfGtWFR262hoct1mC5ZEkTXQmANHnJupKWwwwww'), false)
+    assert.equal(isValidAuthID(Buffer.from('TfGtWFR262hoct1mC5ZEkTXQmANHnJup')), false)
+    assert.equal(isValidAuthID(Buffer.from('TfGtWFR262hoct1mC5ZEkTXQmANHnJupKWwwwww')), false)
   })
   it('should return false', function() {
-    assert.equal(isValidAuthID('TIxkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi'), false)
-    assert.equal(isValidAuthID('TOxkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi'), false)
+    assert.equal(isValidAuthID(Buffer.from('TIxkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi')), false)
+    assert.equal(isValidAuthID(Buffer.from('TOxkmv6QtyCSgSLwb1TCjwwyeFzxrWkrvpi')), false)
   })
 })
