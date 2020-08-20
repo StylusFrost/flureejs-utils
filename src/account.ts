@@ -91,6 +91,8 @@ export const privateToAuthID = function(privateKey: Buffer): Buffer {
 /**
  * Checks if the AuthID is a valid.
  */
-export const isValidAuthID = function(authID: string): boolean {
-  return /^T[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{34}$/.test(authID)
+export const isValidAuthID = function(authID: Buffer): boolean {
+  return /^T[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{34}$/.test(
+    authID.toString(),
+  )
 }
