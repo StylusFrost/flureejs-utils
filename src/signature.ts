@@ -15,7 +15,7 @@ export interface ECDSASignature {
  * Returns the ECDSA signature of a message hash.
  */
 export const ecsign = function(msg: Buffer, privateKey: Buffer): ECDSASignature {
-  const sigDER = crypto.sign_message(msg.toString('hex'), privateKey.toString('hex'))
+  const sigDER = crypto.sign_message(msg.toString(), privateKey.toString('hex'))
   const sig = signatureImport(Buffer.from(sigDER.slice(2), 'hex'))
   const ret = {
     r: Buffer.from(sig.slice(0, 32)),
@@ -47,7 +47,7 @@ export const ecrecover = function(msg: Buffer, v: number, r: Buffer, s: Buffer):
     '30' +
     Buffer.from(result, 'hex').length.toString(16) +
     result
-  const senderPubKey = crypto.pub_key_from_message(msg.toString('hex'), sigDER)
+  const senderPubKey = crypto.pub_key_from_message(msg.toString(), sigDER)
   return importPublic(Buffer.from(senderPubKey, 'hex'))
 }
 
