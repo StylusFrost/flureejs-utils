@@ -4,10 +4,7 @@ import { ecsign, ecrecover, isValidSignature } from '../src'
 
 import { privateToPublic } from '../src'
 
-const echash = Buffer.from(
-  '82ff40c0a986c6a5cfad4ddf4c3aa6996f1a7837f9c398e17e5de5cbd5a12b28',
-  'hex',
-)
+const msg = Buffer.from('HI HOLA')
 const ecprivkey = Buffer.from(
   '3c9229289a6125f7fdf1885a77bb12c37a8d3b4962d936f7e3084dece32a3ca1',
   'hex',
@@ -15,14 +12,14 @@ const ecprivkey = Buffer.from(
 
 describe('ecsign', function() {
   it('should produce a signature', function() {
-    const sig = ecsign(echash, ecprivkey)
+    const sig = ecsign(msg, ecprivkey)
     assert.deepEqual(
       sig.r,
       Buffer.from('cbd32e463567fefc2f120425b0224d9d263008911653f50e83953f47cfbef3bc', 'hex'),
     )
     assert.deepEqual(
       sig.s,
-      Buffer.from('86c0a039b5241f4380ebd6629c22a13cb9a5cc92098a06fcde3d888a37227c8d', 'hex'),
+      Buffer.from('b760e1f85ae52aa1678b2a2b5a58c438e83c058abe24c0951d323809809811df', 'hex'),
     )
     assert.equal(sig.v, 27)
   })
@@ -30,24 +27,24 @@ describe('ecsign', function() {
 describe('ecrecover', function() {
   it('should recover a public key', function() {
     const r = Buffer.from('cbd32e463567fefc2f120425b0224d9d263008911653f50e83953f47cfbef3bc', 'hex')
-    const s = Buffer.from('86c0a039b5241f4380ebd6629c22a13cb9a5cc92098a06fcde3d888a37227c8d', 'hex')
+    const s = Buffer.from('b760e1f85ae52aa1678b2a2b5a58c438e83c058abe24c0951d323809809811df', 'hex')
     const v = 27
-    const pubkey = ecrecover(echash, v, r, s)
+    const pubkey = ecrecover(msg, v, r, s)
     assert.deepEqual(pubkey, privateToPublic(ecprivkey))
   })
 
   it('should fail on an invalid signature (v = 21)', function() {
     const r = Buffer.from('cbd32e463567fefc2f120425b0224d9d263008911653f50e83953f47cfbef3bc', 'hex')
-    const s = Buffer.from('86c0a039b5241f4380ebd6629c22a13cb9a5cc92098a06fcde3d888a37227c8d', 'hex')
+    const s = Buffer.from('b760e1f85ae52aa1678b2a2b5a58c438e83c058abe24c0951d323809809811df', 'hex')
     assert.throws(function() {
-      ecrecover(echash, 21, r, s)
+      ecrecover(msg, 21, r, s)
     })
   })
   it('should fail on an invalid signature (v = 29)', function() {
     const r = Buffer.from('cbd32e463567fefc2f120425b0224d9d263008911653f50e83953f47cfbef3bc', 'hex')
-    const s = Buffer.from('86c0a039b5241f4380ebd6629c22a13cb9a5cc92098a06fcde3d888a37227c8d', 'hex')
+    const s = Buffer.from('b760e1f85ae52aa1678b2a2b5a58c438e83c058abe24c0951d323809809811df', 'hex')
     assert.throws(function() {
-      ecrecover(echash, 29, r, s)
+      ecrecover(msg, 29, r, s)
     })
   })
 })

@@ -32,7 +32,7 @@
 
 ⊕ **new AuthID**(buf: _`Buffer`_): [AuthID](authid.md)
 
-_Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/396a3a3/src/authid.ts#L6)_
+_Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/f4d17fa/src/authid.ts#L6)_
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ _Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/396
 
 **● buf**: _`Buffer`_
 
-_Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/396a3a3/src/authid.ts#L6)_
+_Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/f4d17fa/src/authid.ts#L6)_
 
 ---
 
@@ -64,7 +64,7 @@ _Defined in [authid.ts:6](https://github.com/StylusFrost/flureejs-utils/blob/396
 
 ▸ **toString**(): `string`
 
-_Defined in [authid.ts:35](https://github.com/StylusFrost/flureejs-utils/blob/396a3a3/src/authid.ts#L35)_
+_Defined in [authid.ts:35](https://github.com/StylusFrost/flureejs-utils/blob/f4d17fa/src/authid.ts#L35)_
 
 **Returns:** `string`
 
@@ -76,7 +76,7 @@ _Defined in [authid.ts:35](https://github.com/StylusFrost/flureejs-utils/blob/39
 
 ▸ **fromPrivateKey**(privateKey: _`Buffer`_): [AuthID](authid.md)
 
-_Defined in [authid.ts:26](https://github.com/StylusFrost/flureejs-utils/blob/396a3a3/src/authid.ts#L26)_
+_Defined in [authid.ts:26](https://github.com/StylusFrost/flureejs-utils/blob/f4d17fa/src/authid.ts#L26)_
 
 **Parameters:**
 
@@ -94,7 +94,7 @@ _Defined in [authid.ts:26](https://github.com/StylusFrost/flureejs-utils/blob/39
 
 ▸ **fromPublicKey**(pubKey: _`Buffer`_): [AuthID](authid.md)
 
-_Defined in [authid.ts:16](https://github.com/StylusFrost/flureejs-utils/blob/396a3a3/src/authid.ts#L16)_
+_Defined in [authid.ts:16](https://github.com/StylusFrost/flureejs-utils/blob/f4d17fa/src/authid.ts#L16)_
 
 **Parameters:**
 
