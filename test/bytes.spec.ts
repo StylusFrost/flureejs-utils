@@ -1,5 +1,5 @@
 import * as assert from 'assert'
-import * as BN from 'bn.js'
+import BN from 'bn.js'
 import {
   zeros,
   setLengthLeft,

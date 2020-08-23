@@ -1,5 +1,5 @@
-import * as assert from 'assert'
-import * as BN from 'bn.js'
+import assert from 'assert'
+import BN from 'bn.js'
 import {
   isValidPrivate,
   isValidPublic,

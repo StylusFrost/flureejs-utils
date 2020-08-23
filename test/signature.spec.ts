@@ -1,5 +1,5 @@
 import * as assert from 'assert'
-import * as BN from 'bn.js'
+import BN from 'bn.js'
 import { ecsign, ecrecover, isValidSignature } from '../src'
 
 import { privateToPublic } from '../src'

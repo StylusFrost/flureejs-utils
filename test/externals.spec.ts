@@ -1,6 +1,6 @@
 import * as assert from 'assert'
 
-import * as BN_export from 'bn.js'
+import BN_export from 'bn.js'
 
 const BS58check_export = require('bs58check')
 
