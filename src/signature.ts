@@ -1,5 +1,5 @@
 const { signatureImport } = require('secp256k1')
-import * as BN from 'bn.js'
+import BN from 'bn.js'
 import { hexToUnit8Array } from './bytes'
 import { importPublic } from './account'
 

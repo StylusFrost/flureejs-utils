@@ -1,4 +1,4 @@
-import * as assert from 'assert'
+import assert from 'assert'
 import { toBuffer, baToJSON, unpadBuffer } from './bytes'
 const stripHexPrefix = require('strip-hex-prefix')
 

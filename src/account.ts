@@ -1,6 +1,6 @@
-import * as assert from 'assert'
+import assert from 'assert'
 import { assertIsBuffer } from './helpers'
-import * as BN from 'bn.js'
+import BN from 'bn.js'
 
 const crypto = require('@fluree/crypto-base')
 const {

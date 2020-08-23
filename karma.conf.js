@@ -9,11 +9,14 @@ module.exports = function(config) {
     karmaTypescriptConfig: {
       bundlerOptions: {
         entrypoints: /\.spec\.ts$/,
+      },
+      compilerOptions:{
+        esModuleInterop: true
       }
     },
     colors: true,
     reporters: ['progress', 'karma-typescript'],
-    browsers: [ 'ChromeHeadless'],
+    browsers: [ 'ChromeHeadless','FirefoxHeadless'],
     singleRun: true,
     concurrency: Infinity,
     // Extend timeouts for long tests

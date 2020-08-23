@@ -1,4 +1,4 @@
-import * as BN from 'bn.js'
+import BN from 'bn.js'
 const isHexPrefixed = require('is-hex-prefixed')
 const stripHexPrefix = require('strip-hex-prefix')
 import { assertIsBuffer } from './helpers'
