@@ -3,6 +3,7 @@ import BN from 'bn.js'
 import { ecsign, ecrecover, isValidSignature } from '../src'
 
 import { privateToPublic } from '../src'
+const Buffer = require('buffer').Buffer
 
 const msg = Buffer.from('HI HOLA')
 const ecprivkey = Buffer.from(

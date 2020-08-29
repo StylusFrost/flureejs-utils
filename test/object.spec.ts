@@ -1,6 +1,6 @@
 import * as assert from 'assert'
 import { zeros, defineProperties } from '../src'
-
+const Buffer = require('buffer').Buffer
 describe('define', function() {
   const fields = [
     {

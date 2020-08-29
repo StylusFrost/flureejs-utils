@@ -2,7 +2,7 @@ import * as assert from 'assert'
 
 import BN_export from 'bn.js'
 
-const BS58check_export = require('bs58check')
+//const BS58check_export = require('bs58check')
 
 import * as src from '../src'
 
@@ -36,7 +36,8 @@ describe('External BN export', () => {
     new src.BN(0).iaddn(0x4000000)
   }, /^Error: Assertion failed$/)
 })
-
+// TODO: BS58check is not browser compliance
+/*
 describe('External BS58check export', () => {
   it('should export `BS58check`', () => {
     assert.equal(src.BS58check, BS58check_export)
@@ -47,6 +48,7 @@ describe('External BS58check export', () => {
     assert.equal(actual, '0065a16059864a2fdbc7c99a4723a8395bc6f188eb')
   })
 
+  
   it('should use a BS58check encode function correctly', () => {
     const actual = src.BS58check.encode(
       Buffer.from('0065a16059864a2fdbc7c99a4723a8395bc6f188eb', 'hex'),
@@ -63,5 +65,6 @@ describe('External BS58check export', () => {
     assert.throws(() => {
       src.BS58check.decode('Z9inZq4e2HGQRZQezDjFMmqgUE8NwMRok').toString('hex')
     }, /^Error: Invalid checksum$/)
+    
   })
-})
+})*/
