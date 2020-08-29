@@ -8,11 +8,11 @@
 // the new major version of the typescript config package
 // is released and adopted here.
 import BN = require('bn.js')
-const BS58check = require('bs58check')
+//const BS58check = require('bs58check')
 
 /**
  * [`BN`](https://github.com/indutny/bn.js)
  */
 export { BN }
 
-export { BS58check }
+//export { BS58check }

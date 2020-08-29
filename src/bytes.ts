@@ -1,7 +1,9 @@
 import BN from 'bn.js'
+
 const isHexPrefixed = require('is-hex-prefixed')
 const stripHexPrefix = require('strip-hex-prefix')
 import { assertIsBuffer } from './helpers'
+const Buffer = require('buffer').Buffer
 
 /**
  * Converts a `String` into a `Uint8Array`.

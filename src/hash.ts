@@ -1,7 +1,7 @@
 import { toBuffer, setLengthLeft } from './bytes'
 import { assertIsString, assertIsBuffer, assertIsArray, assertIsHexString } from './helpers'
-const k256 = require('keccak256')
-const createHash = require('create-hash')
+const k256 = require('keccak')
+const crypto = require('@fluree/crypto-base')
 
 /**
  * Creates Keccak hash of a Buffer input
@@ -12,7 +12,9 @@ export const keccak = function(a: Buffer, bits: number = 256): Buffer {
   assertIsBuffer(a)
   switch (bits) {
     case 256: {
-      return k256(a)
+      return k256('keccak256')
+        .update(a)
+        .digest('hex')
     }
     default: {
       throw new Error(`Invald algorithm: keccak${bits}`)
@@ -92,9 +94,7 @@ export const sha256FromArray = function(a: number[]): Buffer {
  */
 const _sha256 = function(a: any): Buffer {
   a = toBuffer(a)
-  return createHash('sha256')
-    .update(a)
-    .digest()
+  return Buffer.from(crypto.sha2_256(a), 'hex')
 }
 /**
  * Creates RIPEMD160 hash of a Buffer input.
@@ -133,9 +133,7 @@ export const ripemd160FromArray = function(a: number[], padded: boolean): Buffer
  */
 const _ripemd160 = function(a: any, padded: boolean): Buffer {
   a = toBuffer(a)
-  const hash = createHash('rmd160')
-    .update(a)
-    .digest()
+  const hash = Buffer.from(crypto.ripemd_160(a), 'hex')
   if (padded === true) {
     return setLengthLeft(hash, 32)
   } else {
